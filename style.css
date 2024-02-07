@@ -1,0 +1,215 @@
+body{     
+  background: #F3F5FC; 
+}
+
+header{
+    background: rgb(181, 205, 241);
+    padding: 20px 0px;
+}
+.cajaHeader{    
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+}
+.cajaHeader li{
+    font-family: Inter;
+    font-size: 32px;
+    color:#0A3871;
+    display: inline-block;
+    text-align: center; 
+    vertical-align:  middle;  
+    width:40%;
+    vertical-align: top;
+    padding: 5px;
+     
+}
+.logo{
+    width: 60px;
+    height: inherit;
+}
+ #aviso{
+    font-weight: bold;
+    padding: 5px;
+    font-size: 19px;
+    color: green;
+    text-align: center;
+}   
+#alerta{
+    font-weight: bold;
+    padding: 5px;
+    font-size: 19px;
+    color: rgb(248, 5, 5);
+    text-align: center;
+} 
+
+.areaEncriptacion{
+    width: 940px;     
+    margin: 0 auto;
+    padding: 20px;  
+     
+   }
+   
+.areaTrabajo li{
+    display: inline-block;
+    vertical-align: top;
+    border-radius:  15px;
+    margin: 0 1.5%;  
+    text-align: center;
+    box-sizing: border-box;   
+}
+
+.areaTrabajo .liMensaje{
+    width: 58%;
+    background: #F3F5FC;
+   
+}
+.areaTrabajo .liResultado{
+    background: white;
+    text-align: center;
+    height: 500px;  
+    width: 35%;       
+}
+ 
+ textarea{
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    resize: none;
+    border: none;
+    outline:none;    
+    border-radius: 5px; 
+    padding: 5px;
+    height: 410px;  
+    width: 90%;  
+    color:#0A3871;
+ }
+.texAreaMensaje{    
+    background: #F3F5FC;    
+   
+  }
+
+  #divResultado{
+    visibility: hidden;
+  }
+
+  .texAreaResultado{    
+    background: white;
+    opacity: 0.6;
+  }
+
+  #divResultadoError{
+    width:  90%;
+    position:  relative;
+    top:-90%;
+    visibility: visible;
+  }
+
+  #divResultadoError img{
+    width: 200px;
+    height: 200px;
+}
+
+  #divResultadoError h1{
+       font-size: 22px;
+       font-weight: bold;
+       padding: 10px;
+  }
+
+ .botonera{
+    text-align: center;
+ }
+
+.botones{
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background: rgb(181, 205, 241);
+    border: none;
+    border-radius: 20px;
+    transition: 1s all;
+    cursor: pointer;
+    width: 150px;
+    margin: 5px;
+   
+}
+#botonCopiar{
+    visibility: hidden;
+}
+
+.botones:hover{
+    background: rgb(3, 60, 114);
+    transform: scale(1.1);
+}
+
+footer{
+    background: rgb(181, 205, 241);
+    text-align: center;
+    padding: 1px;
+}
+
+
+/* Media query*/
+@media screen and (max-width: 480px){
+    /* celular*/
+   
+     
+   .cajaHeader{
+        flex-direction: column;
+        align-items: center;
+        width: 100% !important;
+    } 
+    .cajaHeader ul li{
+        font-size: 1em;
+    }
+     
+    .areaEncriptacion, .areaTrabajo, 
+    .liMensaje, .liResultado, .botonera{
+         
+        width: 270px;
+        
+    }
+    
+    .liMensaje{
+        margin-bottom: 10px;
+    }
+   
+    .areaTrabajo textarea{
+     width: 250px;
+     height: 200px;
+     font-size: 16px;
+     line-height: normal;
+     color:#0A3871;
+     font-family: Inter;
+     text-align: left;
+     resize: none;
+     overflow: hidden;
+     border-radius: 5px; 
+     padding: 5px;
+    }
+      
+    .botones{
+        margin: 5px;
+        float: none;
+        display: block;
+        width: 90%;
+        border-radius: 10px;
+        
+    }
+    .areaTrabajo .liResultado{
+        margin: auto;
+        width: 270px;
+        height: 300px;
+    }
+
+    #divResultadoError img{
+           height: 0px;
+      }
+    
+   
+         
+   
+}
