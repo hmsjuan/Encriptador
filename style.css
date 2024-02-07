@@ -45,7 +45,7 @@ header{
 .areaEncriptacion{
     width: 940px;     
     margin: 0 auto;
-    padding: 20px;  
+    padding: 10px;  
      
    }
    
@@ -98,6 +98,7 @@ header{
   .texAreaResultado{    
     background: white;
     opacity: 0.6;
+    font-size: 25px;
   }
 
   #divResultadoError{
@@ -149,6 +150,12 @@ footer{
     background: rgb(181, 205, 241);
     text-align: center;
     padding: 1px;
+    
+}
+footer p{
+    font-size: 24px;
+    font-weight: bold;
+    color: #0A3871;
 }
 
 
