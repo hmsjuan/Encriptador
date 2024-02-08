@@ -119,14 +119,14 @@ function limpiarAviso(){
 }
 
 function copiarTexto(){
-    var aux = document.createElement("input");
+ 
     if(document.getElementById("mensajeResultado").value==""){
         asignarTextoElemento("alerta","&#9888; El texto esta vacio");
         setTimeout(limpiarAviso,3000);
 
     }
-    aux.setAttribute("value", document.getElementById("mensajeResultado").innerHTML);
-   
+    
+    document.getElementById("mensajeResultado").select();
     document.execCommand("copy"); 
  
     navigator.clipboard.writeText(document.getElementById("mensajeResultado").innerHTML)
