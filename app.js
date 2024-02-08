@@ -118,21 +118,26 @@ function limpiarAviso(){
     asignarTextoElemento('alerta','');
 }
 
-
 function copiarTexto(){
-  
-/** implementación de copy del navegador toado de 
- * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
- */
+    var aux = document.createElement("input");
+    if(document.getElementById("mensajeResultado").value==""){
+        asignarTextoElemento("alerta","&#9888; El texto esta vacio");
+        setTimeout(limpiarAviso,3000);
 
-    document.execCommand("copy"); 
+    }
+    aux.setAttribute("value", document.getElementById("mensajeResultado").innerHTML);
    
+    document.execCommand("copy"); 
+ 
     navigator.clipboard.writeText(document.getElementById("mensajeResultado").innerHTML)
        .then(() => {
-            asignarTextoElemento("aviso","&#10004; Texto Copiado al portapaples");
-             setTimeout(limpiarAviso,3000);
+        asignarTextoElemento("aviso","&#10004; Texto Copiado al portapaples");
+        setTimeout(limpiarAviso,3000);
+           console.log("Success!");
        })
        .catch((err) => {
+           console.log("Oops, unable to copy");
             asignarTextoElemento("alerta","&#9888; El texto no se ha copiado al portapaples");
-        });
+             setTimeout(limpiarAviso,3000);
+       });
 }
