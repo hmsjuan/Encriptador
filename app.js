@@ -124,7 +124,7 @@ function copiarTexto(){
     document.getElementById("mensajeResultado").select();
 
     try {
-        var successful = document.execCommand('copy');
+        var copiando = document.execCommand('copy');
       
         asignarTextoElemento("aviso","&#10004; Texto Copiado al portapaples! ");
         setTimeout(limpiarAviso,3000);
