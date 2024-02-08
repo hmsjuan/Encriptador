@@ -131,7 +131,7 @@ function copiarTexto(){
  
     navigator.clipboard.writeText(document.getElementById("mensajeResultado").innerHTML)
        .then(() => {
-        asignarTextoElemento("aviso","&#10004; Texto Copiado al portapaples");
+        asignarTextoElemento("aviso","&#10004; Texto Copiado al portapaples!");
         setTimeout(limpiarAviso,3000);
            console.log("Success!");
        })
