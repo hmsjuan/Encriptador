@@ -4,7 +4,7 @@ body{
 
 header{
     background: rgb(181, 205, 241);
-    padding: 20px 0px;
+    padding: 5px 0px;
 }
 .cajaHeader{    
     width: 940px;
@@ -46,6 +46,7 @@ header{
     width: 940px;     
     margin: 0 auto;
     padding: 10px;  
+    
      
    }
    
@@ -89,7 +90,8 @@ header{
     color:#090de7;
  }
 .texAreaMensaje{    
-    background: #F3F5FC;    
+    background: #F3F5FC;  
+
   }
 
   #divResultado{
@@ -97,7 +99,7 @@ header{
   }
 
   .texAreaResultado{
-
+  
     background: white;
     opacity: 0.6;
     font-size: 22px;
@@ -148,17 +150,30 @@ header{
     transform: scale(1.1);
 }
 
-footer{
-    background: rgb(181, 205, 241);
+
+.piepagina{
     text-align: center;
-    padding: 1px;
-    
+    padding: 1%;   
+    background: rgb(181, 205, 241);
 }
-footer p{
-    font-size: 24px;
+
+.piepagina li{
+    display:inline-block;
     font-weight: bold;
     color: #0A3871;
+    
+ }
+
+  
+.sociales img {
+    vertical-align: middle;
+    width: 25px;
+    height: auto;
+    margin: auto;
+    padding: 5px;
 }
+
+
 
 
 /* Media query*/
