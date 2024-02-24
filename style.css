@@ -1,33 +1,44 @@
-body{     
-  background: #F3F5FC; 
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
-    background: rgb(181, 205, 241);
-    padding: 5px 0px;
+/* Estilos del header */
+header {
+    background: linear-gradient(180deg, rgb(131, 131, 247),  #F3F5FC); 
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    width:  100%;
 }
-.cajaHeader{    
-    width: 940px;
-    position: relative;
-    margin: 0 auto;
-}
-.cajaHeader li{
+
+header li{
     font-family: Inter;
-    font-size: 32px;
+    font-size: 15px;
     color:#0A3871;
     display: inline-block;
     text-align: center; 
     vertical-align:  middle;  
-    width:40%;
-    vertical-align: top;
-    padding: 5px;
-     
+    width:30%;
+      
 }
 .logo{
-    width: 60px;
+    width: 150px;
     height: inherit;
 }
- #aviso{
+
+
+/* Estilos del main */
+main {
+    padding: 20px;
+    background-color: #F3F5FC;
+    min-height: calc(100vh - 160px); /* Calcula la altura mínima para el main (100% de la altura de la ventana - altura del header y footer) */
+}
+
+
+#aviso{
     font-weight: bold;
     padding: 5px;
     font-size: 19px;
@@ -42,89 +53,56 @@ header{
     text-align: center;
 } 
 
-.areaEncriptacion{
-    width: 940px;     
-    margin: 0 auto;
-    padding: 10px;  
+
+/* Contenedor de las columnas */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
     
-     
-   }
    
-.areaTrabajo li{
-    display: inline-block;
-    vertical-align: top;
-    border-radius:  15px;
-    margin: 0 1.5%;  
-    text-align: center;
-    box-sizing: border-box;   
 }
 
-.areaTrabajo .liMensaje{
-    width: 58%;
-    background: #F3F5FC;
-   
-}
-.areaTrabajo .liResultado{
-    background: white;
-    text-align: center;
-    height: 500px;  
-    width: 35%;       
-}
+/* Estilos de las columnas */
+.column {
+    width: 100%; /* Ancho de las columnas */
  
- textarea{
-  /* font-family: Inter; */
-    font-family: "Roboto Mono","Courier New",monospace;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 48px;
-    letter-spacing: 0em;
-    text-align: left;
-    resize: none;
-    border: none;
-    outline:none;    
-    border-radius: 5px; 
-    padding: 5px;
-    height: 410px;  
-    line-height: unset;
-    width: 90%;  
-    color:#090de7;
- }
-.texAreaMensaje{    
-    background: #F3F5FC;  
-
-  }
-
-  #divResultado{
-    visibility: hidden;
-  }
-
-  .texAreaResultado{
-  
-    background: white;
-    opacity: 0.6;
-    font-size: 22px;
-  }
-
-  #divResultadoError{
-    width:  90%;
-    position:  relative;
-    top:-90%;
-    visibility: visible;
-  }
-
-  #divResultadoError img{
-    width: 200px;
-    height: 200px;
+   
 }
 
-  #divResultadoError h1{
-       font-size: 22px;
-       font-weight: bold;
-       padding: 10px;
-  }
-
- .botonera{
+.area-mensaje{
+    padding: 10px;
+    margin-bottom: 20px;
     text-align: center;
+}
+
+textarea{
+    /* font-family: Inter; */
+      font-family: "Roboto Mono","Courier New",monospace;
+      font-size: 25px;
+      font-weight: 200;      
+      letter-spacing: 0em;
+      text-align: left;
+      resize: none;
+      border: none;
+      outline:none;    
+      border-radius: 5px;  
+      height: 280px;  
+      line-height: unset;
+      width: 90%;  
+      color:#000000;
+      padding: 15px;
+   }
+
+.texAreaMensaje{    
+    background: #F3F5FC; 
+             
+}
+
+
+.botonera{
+    text-align: center;    
  }
 
 .botones{
@@ -137,12 +115,14 @@ header{
     border-radius: 20px;
     transition: 1s all;
     cursor: pointer;
-    width: 150px;
+    width: 20vh;
     margin: 5px;
    
 }
 #botonCopiar{
-    visibility: hidden;
+    visibility: visible;
+  
+ 
 }
 
 .botones:hover{
@@ -150,91 +130,131 @@ header{
     transform: scale(1.1);
 }
 
-
-.piepagina{
-    text-align: center;
-    padding: 1%;   
-    background: rgb(181, 205, 241);
+.area-resultado {
+  
+    position: relative;
+    background-color: white;
+    border-radius: 15px;   
+    z-index: 1;    
+    margin-left: 20px;
+    box-shadow: -7px 9px 15px rgba(158,158,158,.35) !important;   
+  
 }
 
-.piepagina li{
-    display:inline-block;
-    font-weight: bold;
-    color: #0A3871;
-    
+/* Estilos de los divs superpuestos */
+.overlay {
+    padding: 10px;
+    margin-bottom: 20px; 
+   
+}
+
+.texAreaResultado{ 
+    opacity: 0.6;
+    font-size: 22px; 
+    resize: none;
+    transition: border-color 0.3s ease; /* Animación para el borde */
+}
+ #mensaje-resultado{
+    display: none;
+    text-align: center;
+ }
+#mensaje-error img{
+      width: 200px;
+      height: 200px;
+  }
+  
+#mensaje-error  h1{
+         font-size: 22px;
+         font-weight: bold;
+         padding: 10px;
+    }
+
+#mensaje-error{
+    display: block; 
+    text-align: center; 
  }
 
-  
-.sociales img {
+
+
+/* Estilos del footer */
+footer {
+    background: linear-gradient(180deg,   #F3F5FC, rgb(55, 55, 238));
+    color: #15027c;
+    padding: 10px;
+    text-align: center;
+    width:  100%;
+    margin-bottom: 0;
+    
+}
+
+footer li{
+    display: inline-block;
+}
+footer img {
     vertical-align: middle;
     width: 25px;
     height: auto;
     margin: auto;
     padding: 5px;
 }
+footer img:hover{
+  
+    transform: scale(1.81);
+}
 
+/* Animación de entrada */
+@keyframes entradaDigital {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Aplicar animación al textarea */
+  #textareaResultado.animacion-entrada {
+    animation: entradaDigital 0.5s ease forwards;
+  }
 
+/* Media queries */
+@media (min-width: 768px) {
+    /* Para tablet y desktop */
+    .column {
+        width: 48%; /* Ancho de las columnas en pantalla grande */
+    }
 
+}
 
-/* Media query*/
-@media screen and (max-width: 480px){
-    /* celular*/
-   
-     
-   .cajaHeader{
-        flex-direction: column;
-        align-items: center;
-        width: 100% !important;
-    } 
-    .cajaHeader ul li{
-        font-size: 1em;
+@media only screen and (max-width:  768px){
+    /* Si es mobile */
+    header{
+        text-align: center;
     }
-     
-    .areaEncriptacion, .areaTrabajo, 
-    .liMensaje, .liResultado, .botonera{
-         
-        width: 270px;
-        
-    }
-    
-    .liMensaje{
-        margin-bottom: 10px;
-    }
-   
-    .areaTrabajo textarea{
-     font-family: "Roboto Mono","Courier New",monospace; 
-     width: 250px;
-     height: 200px;
-     font-size: 16px;
-     line-height: normal;
-     color:#0A3871;
-     font-family: Inter;
-     text-align: left;
-     resize: none;
-     overflow: hidden;
-     border-radius: 5px; 
-     padding: 5px;
-    }
-      
-    .botones{
-        margin: 5px;
-        float: none;
+    header li{
+        font-family: Inter;
+        font-size: 12px;
+        color:#0A3871;
         display: block;
-        width: 90%;
-        border-radius: 10px;
-        
+        text-align: center;      
+        width:30%;
+          
     }
-    .areaTrabajo .liResultado{
-        margin: auto;
-        width: 270px;
-        height: 300px;
-    }
-
-    #divResultadoError img{
-           height: 0px;
-      }
+    .column {
+        width: 98%; /* Ancho total para que ocupe todo el ancho de la pantalla */
     
-   
-         
-   
+    }
+    .botones{
+        padding: 8px 0;
+        font-size: 10px;
+       
+       
+       
+     
+        width: 15vh;
+        margin: 3px;
+       
+    }
 }
