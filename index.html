@@ -1,77 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta  charset="utf-8">
-      
-        <meta name="viewport" content="width=device-width">
-        <title>Challenge ONE Sprint 01</title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
-      
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header> 
-            <div class="cajaHeader"> 
-                <ul>
-                    <li>                        
-                        <img class="logo" src="./imagenes/logo.png">                                              
-                    </li>
-                    <li>
-                        <h1>Challenge  ONE Encriptador de texto</h1>
-                    </li>
-                    
-                </ul>
-                
-            </div>         
-           
-        </header>
-        <main>
-            <section class="areaEncriptacion">
-                <p id="aviso"></p>
-                <p id="alerta"></p>
-                <ul class="areaTrabajo">
-                     
-                    <li class="liMensaje">
-                        <div> 
-                            <textarea cols="70"  rows="25" id="mensaje" class="texAreaMensaje" required placeholder="ingrese el texto aqui"></textarea>
-                        </div> 
-                       
-                         <div class="botonera">
-                            <p id="errorTexto">&#9888; El texto no debe contener carácteres especiales ni mayúscula</p>  
-                            <input  class="botones"  onclick="encriptarDesencriptar('e');"   type="button"  value="Encriptar" id="botonEncriptar">
-                            <input  class="botones"  onclick="encriptarDesencriptar('d');"   type="button"  value="Desencriptar" id="botonDesEncriptar"> 
-                            <input  class="botones"  onclick="reiniciarValores();" type="button"  value="Limpiar" id="botonLimpiar"> 
-                        </div>
-                    </li>
-                    <li class="liResultado" >
-                        <div id="divResultado" > 
-                            <textarea  cols="30" rows="25" id="mensajeResultado" class="texAreaResultado" readonly></textarea>
-                            <p>.</p> 
-                            <div class="botonera">
-                                <input  class="botones"  onclick="copiarTexto();" type="button"  value="Copiar" id="botonCopiar">
-                            </div>  
-                       </div>                       
-                       <div id="divResultadoError"> 
-                        <img class="imagenError" src="./imagenes/error2.png" alt="">                           
-                            <h1>Ningún mensaje fue encontrado</h1>
-                            <p>Ingresa el texto que deseas encriprar o desencriptar</p>
-                       </div>
-                    </li>                   
-                </ul>
-            </section>
-        </main>
-        <footer class="piepagina">     
-            <div class="sociales">
-             <ul>
-                <li>&copy; Humberto Suarez Santo 2024</li>   <br>        
-                <li class="items"><a href="https://github.com/hmsjuan"><img src="https://cdn-icons-png.flaticon.com/256/25/25231.png"> </a></li>
-                <li class="items"><a href="https://www.linkedin.com/in/hssanto/"><img src="https://cdn.iconscout.com/icon/free/png-256/free-linkedin-40-151141.png"> </a></li>
-             </ul>             
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador/Desencriptador de textos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li>                        
+                <img class="logo" src="./img/Logo.svg">                                              
+            </li>
+            <li>
+                <h1>Encriptador de texto</h1>
+            </li>                
+        </ul>
+    </header>
+    
+    <main>
+        <p id="aviso"></p>
+            <p id="alerta"></p>
+        <div class="container">            
+            <div class="area-mensaje">
+                <div> 
+                    <textarea cols="40"  rows="22" id="mensaje" class="texAreaMensaje" required placeholder="ingrese el texto aqui"></textarea>
+                </div>                
+                 <div class="botonera">
+                    <p id="errorTexto">&#9888; El texto no debe contener carácteres especiales ni mayúscula</p>  
+                    <input  class="botones"  onclick="encriptaDesencripta('e');"   type="button"  value="Encriptar" id="botonEncriptar">
+                    <input  class="botones"  onclick="encriptaDesencripta('d');"   type="button"  value="Desencriptar" id="botonDesEncriptar"> 
+                    <input  class="botones"  onclick="reiniciarValores();" type="button"  value="Limpiar" id="botonLimpiar"> 
+                </div>
             </div>
-        </footer>
-        <script src="app.js"></script>
-     </body>
+            <div class="area-resultado">
+                <div class="overlay" id="mensaje-resultado">                    
+                        <textarea  cols="25" rows="22" id="mensajeResultado" class="texAreaResultado" readonly></textarea>                        
+                        <div class="botonera">
+                            <p>.</p>
+                            <input  class="botones"  onclick="copiarTexto();" type="button"  value="Copiar" id="botonCopiar">
+                        </div>                    
+                </div>
+                <div class="overlay" id="mensaje-error">
+                    <img class="imagenError" src="./img/Muñeco.svg" alt="">                           
+                    <h1>Ningún mensaje fue encontrado</h1>
+                    <p>Ingresa el texto que deseas encriprar o desencriptar</p>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <ul>
+            <li>&copy; Humberto Suarez Santo 2024</li>   <br>        
+            <li class="items"><a href="https://github.com/hmsjuan"><img src="https://cdn-icons-png.flaticon.com/256/25/25231.png"> </a></li>
+            <li class="items"><a href="https://www.linkedin.com/in/hssanto/"><img src="https://cdn.iconscout.com/icon/free/png-256/free-linkedin-40-151141.png"> </a></li>
+         </ul> 
+    </footer>
+    <script src="app.js"></script>
+</body>
 </html>
