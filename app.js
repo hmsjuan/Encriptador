@@ -1,10 +1,20 @@
 
-const matriz_claves = [
+/*const matriz_claves = [
     ['e', 'enter'],
     ['i', 'imes'],
     ['a', 'ai'],
     ['o', 'ober'],
     ['u', 'ufat'],    
+];*/
+
+const matriz_claves = [
+    
+    ['u', 'ufat'],
+    ['o', 'ober'],
+    ['a', 'ai'],  
+    ['i', 'imes'],
+    ['e', 'enter'],
+    
 ];
 
 const mensaje = document.querySelector('#mensaje');
