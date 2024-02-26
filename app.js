@@ -85,14 +85,14 @@ function encriptaDesencripta(accion){
     if (nuevoTexto.valueOf !=""){
             //Mostramos un mensaje de encriptacion o desencriptacion lograda por 3 segundos en un parrafo 
         
-        asignarTextoElemento('aviso',`&#10004; El texto ha sido  ${(accion === 'e') ? 'encriptado' : 'desencriptado'} correctamente`);
-        setTimeout(limpiarAviso,3000);
+           asignarTextoElemento('aviso',`&#10004; El texto ha sido  ${(accion === 'e') ? 'encriptado' : 'desencriptado'} correctamente`);
+            setTimeout(limpiarAviso,3000);
                     
             //muestro el texto encriptado un texarea y luego lo hago visible
-        asignarTextoElemento("mensajeResultado",texto);
-        mostrarOcultarElemento('botonCopiar','visible');
-        mostrarOcultarElemento('resultadoCorrecto','block');   
-        mostrarOcultarElemento('resultadoError','none');  
+             asignarTextoElemento("mensajeResultado",texto);    
+            mostrarOcultarElementoDisplay('botonCopiar','block');
+            mostrarOcultarElementoDisplay('mensaje-resultado','block');   
+            mostrarOcultarElementoDisplay('mensaje-error','none');  
     }
 }
 
